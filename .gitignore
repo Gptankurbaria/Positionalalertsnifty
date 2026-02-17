@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.venv
+venv/
+ENV/
+.streamlit/config.toml
+config_local.py
+debug_yf.py
