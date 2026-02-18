@@ -42,11 +42,11 @@ def send_telegram_alert(message, bot_token=None, chat_id=None):
     """
     Sends the message to Telegram using provided tokens or defaults from config.
     """
-    token = bot_token or config.TELEGRAM_BOT_TOKEN
-    chat = chat_id or config.TELEGRAM_CHAT_ID
+    token = (bot_token or config.TELEGRAM_BOT_TOKEN).strip()
+    chat = str(chat_id or config.TELEGRAM_CHAT_ID).strip()
 
-    if token in ["YOUR_BOT_TOKEN_HERE", ""] or chat in ["YOUR_CHAT_ID_HERE", ""]:
-        return False, "Telegram settings incomplete. Check settings or Streamlit Secrets."
+    if token in ["YOUR_BOT_TOKEN_HERE", "", "None"] or chat in ["YOUR_CHAT_ID_HERE", "", "None"]:
+        return False, "Telegram settings incomplete. Please add BOT_TOKEN and CHAT_ID to your Streamlit Secrets."
 
     url = f"https://api.telegram.org/bot{token}/sendMessage"
     payload = {
