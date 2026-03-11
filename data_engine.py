@@ -20,6 +20,9 @@ def fetch_market_data():
         df = yf.download(symbol, period="6y", interval="1d", progress=False)
         df.dropna(inplace=True)
         
+        if df.empty or len(df) < 20:
+            raise ValueError(f"Data source returned insufficient data for {symbol} (likely API block). Please try again later.")
+            
         # Flatten MultiIndex if present (yfinance v0.2.x behavior)
         if isinstance(df.columns, pd.MultiIndex):
             df.columns = df.columns.get_level_values(0)
@@ -37,6 +40,7 @@ def fetch_nifty50_data():
     # Download 6 months of daily data for all constituents
     df = yf.download(NIFTY50_SYMBOLS, period="6mo", interval="1d", progress=False)
     
-    # yf returns MultiIndex [Price, Symbol]
-    # We want to ensure we handle it correctly
+    if df.empty or len(df) < 20:
+        raise ValueError("Data source returned insufficient Nifty 50 constituents data.")
+        
     return df
