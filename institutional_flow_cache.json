@@ -1,0 +1,60 @@
+{
+    "last_update_date": "11-Mar-2026",
+    "history": [
+        {
+            "date": "Day 9",
+            "fii_net": 0,
+            "dii_net": 0
+        },
+        {
+            "date": "Day 8",
+            "fii_net": 0,
+            "dii_net": 0
+        },
+        {
+            "date": "Day 7",
+            "fii_net": 0,
+            "dii_net": 0
+        },
+        {
+            "date": "Day 6",
+            "fii_net": 0,
+            "dii_net": 0
+        },
+        {
+            "date": "Day 5",
+            "fii_net": 0,
+            "dii_net": 0
+        },
+        {
+            "date": "Day 4",
+            "fii_net": 0,
+            "dii_net": 0
+        },
+        {
+            "date": "Day 3",
+            "fii_net": -150,
+            "dii_net": 240
+        },
+        {
+            "date": "Day 2",
+            "fii_net": -150,
+            "dii_net": 240
+        },
+        {
+            "date": "Day 1",
+            "fii_net": -150,
+            "dii_net": 240
+        },
+        {
+            "date": "10-Mar-2026",
+            "fii_net": -4672.64,
+            "dii_net": 6333.26
+        }
+    ],
+    "fii_3d_net": -4972.64,
+    "dii_3d_net": 6813.26,
+    "fii_10d_net": -5122.64,
+    "dii_10d_net": 7053.26,
+    "flow_regime": "BULLISH"
+}
