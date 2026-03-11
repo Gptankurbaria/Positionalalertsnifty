@@ -37,11 +37,11 @@ st.set_page_config(
 
 # Caching Data
 @st.cache_data(ttl=3600)
-def get_cached_market_data():
+def get_cached_market_data_v2():
     return fetch_market_data()
 
 @st.cache_data(ttl=3600)
-def get_cached_nifty50_data():
+def get_cached_nifty50_data_v2():
     return fetch_nifty50_data()
 
 # Custom CSS for Minimalist Institutional Look (Compact 1-Screen)
@@ -73,8 +73,8 @@ st.markdown("<h3 style='margin-top:0;'>💸 Option Selling Intelligence Desk</h3
 # Data Loading
 with st.spinner("Analyzing Volatility Regimes..."):
     try:
-        data = get_cached_market_data()
-        nifty50_data = get_cached_nifty50_data()
+        data = get_cached_market_data_v2()
+        nifty50_data = get_cached_nifty50_data_v2()
     except Exception as e:
         st.error(f"Error fetching data: {e}")
         st.stop()
