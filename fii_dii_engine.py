@@ -77,13 +77,13 @@ def load_cache():
         "flow_regime": "NEUTRAL"
     }
 
-def update_fii_dii():
+def update_fii_dii(force=False):
     """Main function called by dashboard to ensure data is updated once per day."""
     cache = load_cache()
     today_str = datetime.datetime.now().strftime("%d-%b-%Y")
     
     # Check if already updated today
-    if cache.get("last_update_date") == today_str:
+    if not force and cache.get("last_update_date") == today_str:
         return cache
         
     latest_data = get_nse_fii_dii_daily()

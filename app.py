@@ -279,6 +279,11 @@ with ac2:
         success, info = send_telegram_alert(msg)
         if success: st.success("Alert Dispatched.")
         else: st.error(f"Failed: {info}")
+    
+    if st.button("🔄 REFRESH FII/DII", use_container_width=True):
+        update_fii_dii(force=True)
+        st.toast("FII/DII Data Updated!")
+        st.rerun()
 
 
 auto_refresh(86400000) # 24 hours
