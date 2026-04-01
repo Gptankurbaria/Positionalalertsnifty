@@ -44,12 +44,12 @@ def run_weekly_job():
         print(f"Error in weekly job: {e}")
 
 def start_scheduler():
-    print(f"Scheduler started. Waiting for Monday at {MONDAY_ALERT_TIME}...")
+    print(f"Scheduler started. Waiting for daily update at {MONDAY_ALERT_TIME}...")
     
-    # Schedule the job for Monday
-    schedule.every().monday.at(MONDAY_ALERT_TIME).do(run_weekly_job)
+    # Schedule the job for daily execution
+    schedule.every().day.at(MONDAY_ALERT_TIME).do(run_weekly_job)
     
-    # Also add a heartbeat or daily check if needed, but for now just the Monday job
+    # Also add a heartbeat or daily check if needed, but for now just the daily job
     while True:
         schedule.run_pending()
         time.sleep(60)

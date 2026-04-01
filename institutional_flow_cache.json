@@ -1,11 +1,6 @@
 {
-    "last_update_date": "30-Mar-2026",
+    "last_update_date": "01-Apr-2026",
     "history": [
-        {
-            "date": "Day 8",
-            "fii_net": 0,
-            "dii_net": 0
-        },
         {
             "date": "Day 7",
             "fii_net": 0,
@@ -50,11 +45,16 @@
             "date": "27-Mar-2026",
             "fii_net": -4367.3,
             "dii_net": 3566.15
+        },
+        {
+            "date": "30-Mar-2026",
+            "fii_net": -11163.06,
+            "dii_net": 14894.72
         }
     ],
-    "fii_3d_net": -9189.94,
-    "dii_3d_net": 10139.41,
-    "fii_10d_net": -9489.94,
-    "dii_10d_net": 10619.41,
-    "flow_regime": "NEUTRAL"
+    "fii_3d_net": -20203.0,
+    "dii_3d_net": 24794.13,
+    "fii_10d_net": -20653.0,
+    "dii_10d_net": 25514.13,
+    "flow_regime": "BULLISH"
 }

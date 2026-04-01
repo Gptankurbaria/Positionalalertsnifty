@@ -24,7 +24,7 @@ def calculate_breadth_metrics(nifty50_df):
     
     # 3. Advance/Decline Ratio (Daily)
     # Today's return vs yesterday
-    daily_returns = closes.pct_change()
+    daily_returns = closes.pct_change(fill_method=None)
     advances = (daily_returns.iloc[-1] > 0).sum()
     declines = (daily_returns.iloc[-1] < 0).sum()
     

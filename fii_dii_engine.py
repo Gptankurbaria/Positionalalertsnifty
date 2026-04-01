@@ -24,12 +24,19 @@ def get_nse_fii_dii_daily():
             dii_net = 0
             date_str = None
             
+            def safe_float(val):
+                try:
+                    if not val or val == '-': return 0.0
+                    return float(str(val).replace(",", ""))
+                except:
+                    return 0.0
+
             for row in data:
                 if row.get("category") == "FII/FPI":
-                    fii_net = float(row.get("netValue", 0))
+                    fii_net = safe_float(row.get("netValue"))
                     date_str = row.get("date")
                 elif row.get("category") == "DII":
-                    dii_net = float(row.get("netValue", 0))
+                    dii_net = safe_float(row.get("netValue"))
                     # date_str is usually the same for both
                     if not date_str:
                         date_str = row.get("date")
